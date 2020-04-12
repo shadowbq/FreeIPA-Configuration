@@ -9,19 +9,24 @@ You can launch your own https://hub.docker.com/r/freeipa/freeipa-server/
 * https://www.freeipa.org/page/Demo
 
 ## Connection 
-```
+
+```yaml
 Host: ipa.demo1.freeipa.org
 Port: 389
 ```
 
 ## Authentication
 
-```
+```yaml
 Look DN: uid=admin,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org
 Password: Secret123
-Authentication Method Simple
+# Authentication Method Simple
 User DN Template: uid=%(username)s,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org
 ```
+
+Searching for a username using `uid`
+
+![Searching for a username using `uid`](media/user-sn.png)
 
 ## Users
 
@@ -42,11 +47,19 @@ The password is **`Secret123`** for all of them
 |manager|Test|Manager| Enabled|1162400001|manager@demo1.freeipa.org|
 |midpoint|midpoint|Medpoint_last_name| Enabled|1162400010|midpoint@demo1.freeipa.org|
 
+### DC/OS User Template
+
+DC/OS maps LDAP `uid` to DC/OS `username`
+
+```yaml
+User DN Template: uid=%(username)s,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org
+```
+
 ## Groups
 
 To allow testing group-based authentication we created additional groups in addition to the default FreeIPA ones:
 
-`employees`: contains users employee and manager.   
+`employees`: contains users employee and manager.
 `managers`: contains user manager.  
 
 |Group name|	GID	|Description|
@@ -61,11 +74,16 @@ To allow testing group-based authentication we created additional groups in addi
 
 ## Group Import
 
-```
+### DC/OS Group Template
+
+DC/OS maps LDAP Group `cn` to DC/OS `groupname`
+
+```yaml
 Group Search Base: cn=groups,cn=accounts,dc=demo1,dc=freeipa,dc=org
 Group Search Filter Template: (cn=%(groupname)s)
 ```
 
+![Searching for a username using `cn`](media/group-cn.png)
 
 ## Docker and Container Issues
 
@@ -76,6 +94,8 @@ It is not tagging with version numbers (a major anti-pattern), it's only using l
 * https://travis-ci.org/github/freeipa/freeipa-container
 
 Similar RH OpenShift:  
-possible clone with proper tagging as noted in #https://github.com/freeipa/freeipa-container/issues/246  
+
+RH Semi-Clone with proper tagging as noted in #https://github.com/freeipa/freeipa-container/issues/246  
+
 * https://access.redhat.com/containers/?tab=tags#/registry.access.redhat.com/rhel7/ipa-server  
 * https://access.redhat.com/containers/?tab=overview&get-method=unauthenticated#/registry.access.redhat.com/rhel7/ipa-server  
