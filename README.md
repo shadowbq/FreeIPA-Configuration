@@ -12,6 +12,10 @@ You can launch your own https://hub.docker.com/r/freeipa/freeipa-server/
 
 * https://github.com/mesosphere/dex/blob/v2.22.0-mesosphere/Documentation/connectors/ldap.md
 
+## D2iQ Konvoy
+
+* https://docs.d2iq.com/ksphere/konvoy/1.4/security/external-idps/howto-dex-ldap-connector/
+
 ## Connection 
 
 ```yaml
