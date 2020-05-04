@@ -8,6 +8,10 @@ You can launch your own https://hub.docker.com/r/freeipa/freeipa-server/
 
 * https://www.freeipa.org/page/Demo
 
+## Dex
+
+* https://github.com/mesosphere/dex/blob/v2.22.0-mesosphere/Documentation/connectors/ldap.md
+
 ## Connection 
 
 ```yaml
