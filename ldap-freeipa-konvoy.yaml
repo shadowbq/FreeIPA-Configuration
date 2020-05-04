@@ -19,6 +19,7 @@ spec:
   ldap:
     host: ipa.demo1.freeipa.org:389
     insecureNoSSL: true
+    insecureSkipVerify: true
     bindDN: uid=admin,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org
     bindSecretRef:
       name: ldap-password
@@ -27,7 +28,7 @@ spec:
       filter: "(objectClass=person)"
       username: uid
       idAttr: uid
-      emailAttr: mail
+      emailAttr: krbPrincipalName
     groupSearch:
       baseDN: cn=groups,cn=accounts,dc=demo1,dc=freeipa,dc=org
       filter: "(objectClass=groupofnames)"
