@@ -17,7 +17,7 @@ There are two or three issues covered in here:
 
 https://docs.d2iq.com/ksphere/konvoy/1.4/security/external-idps/howto-dex-ldap-connector/
 
-## `Not Authorized` is Not Authenticated!
+## `Not Authorized` is the same as Not Authenticated!
 
 This is actually not an error, but a permissions issue.
 
