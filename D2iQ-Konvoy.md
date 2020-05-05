@@ -8,7 +8,8 @@ You can easily hook Dex to provide ldap functionality to Konvoy.
 
 `Dex` is deployed as an `addon` in Konvoy
 
-* https://github.com/mesosphere/dex/blob/v2.22.0-mesosphere/Documentation/connectors/ldap.md
+* (private) https://github.com/mesosphere/dex/blob/v2.22.0-mesosphere/Documentation/connectors/ldap.md
+
 
 Note:  You can **not** use the `./extras/kubernetes` folders for automation, because addons are fired after 
 ansible's `STAGE [Deploying Additional Kubernetes Resources]`
@@ -61,7 +62,32 @@ Fully authenticated and authorized using ldap `admin` in `kubectl`.
 
 ### Set additional RBACS
 
-(Need more RBAC information here)
+Grant the user `opsportal-admin` role
+
+```
+$ kubectl describe clusterroles opsportal-admin
+describe clusterroles opsportal-admin
+Name:         opsportal-admin
+Labels:       app.kubernetes.io/instance=opsportal-kubeaddons
+              app.kubernetes.io/managed-by=Tiller
+              app.kubernetes.io/version=1.0.0
+Annotations:  <none>
+PolicyRule:
+  Resources  Non-Resource URLs  Resource Names  Verbs
+  ---------  -----------------  --------------  -----
+             [/ops/portal/*]    []              [delete]
+             [/ops/portal]      []              [delete]
+             [/ops/portal/*]    []              [get]
+             [/ops/portal]      []              [get]
+             [/ops/portal/*]    []              [head]
+             [/ops/portal]      []              [head]
+             [/ops/portal/*]    []              [post]
+             [/ops/portal]      []              [post]
+             [/ops/portal/*]    []              [put]
+             [/ops/portal]      []              [put]
+```             
+
+* More RBAC in the Portal: https://docs.d2iq.com/ksphere/konvoy/1.5.0-beta/security/external-idps/rbac/
 
 ### Authenticated into Kommander with Federation
 
