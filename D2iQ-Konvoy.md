@@ -19,6 +19,20 @@ There is a somewhat incomplete tutorial using a different open ldap demo server.
 
 * https://docs.d2iq.com/ksphere/konvoy/1.4/security/external-idps/howto-dex-ldap-connector/
 
+## Deploying Manifest to Konvoy
+
+The `manifests/ldap/` define some basic configuration for the ldap binding.
+
+```shell
+$ kubectl apply -f manifests/
+secret/ldap-password configured
+connector.dex.mesosphere.io/ldap unchanged
+clusterrolebinding.rbac.authorization.k8s.io/cluster-admin-ldapadmin unchanged
+clusterrole.rbac.authorization.k8s.io/prom-admin unchanged
+clusterrolebinding.rbac.authorization.k8s.io/prom-rbac created
+```
+
+
 ## D2iQ Ksphere Konvoy 1.5.x using correctly configured LDAP 
 
 ### Authenticated for `kubectl` Token use
