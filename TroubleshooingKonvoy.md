@@ -11,7 +11,13 @@ dex-kubeaddons-dd869fc8f-j4xcf                                    1/1     Runnin
 dex-kubeaddons-dex-controller-6b6c9fbd7f-sscb7                    2/2     Running     0          3h39m
 ```
 
-## `Not Authorized`
+## Issues
+
+There are two or three issues covered in here:
+
+https://docs.d2iq.com/ksphere/konvoy/1.4/security/external-idps/howto-dex-ldap-connector/
+
+## `Not Authorized` is Not Authenticated!
 
 This is actually not an error, but a permissions issue.
 
