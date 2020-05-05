@@ -8,10 +8,6 @@ You can launch your own https://hub.docker.com/r/freeipa/freeipa-server/
 
 * https://www.freeipa.org/page/Demo
 
-## Dex
-
-* https://github.com/mesosphere/dex/blob/v2.22.0-mesosphere/Documentation/connectors/ldap.md
-
 
 ## Connection 
 
@@ -76,9 +72,9 @@ To allow testing group-based authentication we created additional groups in addi
 
 ![Searching for a group using `cn`](media/group-cn.png)
 
-## Docker and Container Issues
+## Docker and Container Issues with FreeIPA
 
-It is not tagging with version numbers (a major anti-pattern), it's only using latest.
+It is not tagging with version numbers **(a major anti-pattern)**, it's only using `:latest`.
 
 * https://www.github.com/Tiboris/freeipa-container
 * https://hub.docker.com/r/freeipa/freeipa-server/builds
