@@ -47,6 +47,8 @@ The password is **`Secret123`** for all of them
 `employee`: A regular user with no special privileges.  
 `manager`: A regular user, set as manager of the employee user.  
 
+**Note:** The `admin` does not have a `mail` ldap object. (This can cause issues if trying to use it as the the login/username object). All the others have a `mail` object.
+
 |User login|	First name	|Last name	|Status	|UID	|Email address|
 |---|---|---|---|---|---|
 |admin||Administrator|Enabled|1162400000||
