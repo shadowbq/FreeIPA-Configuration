@@ -12,9 +12,6 @@ You can launch your own https://hub.docker.com/r/freeipa/freeipa-server/
 
 * https://github.com/mesosphere/dex/blob/v2.22.0-mesosphere/Documentation/connectors/ldap.md
 
-## D2iQ Konvoy
-
-* https://docs.d2iq.com/ksphere/konvoy/1.4/security/external-idps/howto-dex-ldap-connector/
 
 ## Connection 
 
@@ -25,6 +22,8 @@ Port: 389
 
 ## Authentication
 
+You need to use a Bind user for lookup on most LDAP. 
+
 ```yaml
 Look DN: uid=admin,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org
 Password: Secret123
@@ -32,9 +31,6 @@ Password: Secret123
 User DN Template: uid=%(username)s,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org
 ```
 
-Searching for a username using `uid`
-
-![Searching for a username using `uid`](media/user-sn.png)
 
 ## Users
 
@@ -57,13 +53,9 @@ The password is **`Secret123`** for all of them
 |manager|Test|Manager| Enabled|1162400001|manager@demo1.freeipa.org|
 |midpoint|midpoint|Medpoint_last_name| Enabled|1162400010|midpoint@demo1.freeipa.org|
 
-### DC/OS User Template
+Searching for a username using `uid`
 
-DC/OS maps LDAP `uid` to DC/OS `username`
-
-```yaml
-User DN Template: uid=%(username)s,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org
-```
+![Searching for a username using `uid`](media/user-sn.png)
 
 ## Groups
 
@@ -82,18 +74,7 @@ To allow testing group-based authentication we created additional groups in addi
 |test|1162400011|test|
 |trust admins||Trusts administrators group|
 
-## Group Import
-
-### DC/OS Group Template
-
-DC/OS maps LDAP Group `cn` to DC/OS `groupname`
-
-```yaml
-Group Search Base: cn=groups,cn=accounts,dc=demo1,dc=freeipa,dc=org
-Group Search Filter Template: (cn=%(groupname)s)
-```
-
-![Searching for a username using `cn`](media/group-cn.png)
+![Searching for a group using `cn`](media/group-cn.png)
 
 ## Docker and Container Issues
 
