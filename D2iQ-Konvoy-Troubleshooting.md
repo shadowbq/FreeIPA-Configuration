@@ -18,7 +18,7 @@ Using `admin-kubernetes-cluster` context in `kubectl` config using ldap `admin`.
 
 ![kubectl use](media/kubectl-config-use.png)
 
-## Authenticated for portal use
+## Authenticated for Opsportal use
 
 Login using the LDAP TEST.
 
@@ -32,9 +32,9 @@ Fully authenticated and authorized using ldap `admin` in `kubectl`.
 
 (Need more RBAC information here)
 
-## Authenticated into OpsPortal
+## Authenticated into Kommander with Federation
 
-Fully authenticated and authorized using "admin" in "opsportal".
+(Fix this) Fully authenticated and authorized using "admin" in "opsportal".
 
 ![Wrong Password](media/PerfectOpsPortal-1.5.png)
 
