@@ -20,6 +20,10 @@ There is a somewhat incomplete tutorial using a different open ldap demo server.
 
 * https://docs.d2iq.com/ksphere/konvoy/1.4/security/external-idps/howto-dex-ldap-connector/
 
+There are other tutorials using OAuth (watch out for the age of the konvoy references)
+
+* https://github.com/mesosphere/konvoy-training#appendix-1-setting-up-an-external-identity-provider
+
 ## Deploying Manifest to Konvoy
 
 The `manifests/ldap/` define some basic configuration for the ldap binding.
