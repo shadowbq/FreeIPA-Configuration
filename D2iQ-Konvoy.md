@@ -92,7 +92,7 @@ https://docs.d2iq.com/ksphere/konvoy/1.4/security/external-idps/howto-dex-ldap-c
 
 This is actually not an error, but a permissions issue.
 
-`admin` Did actually login! We need to fix RBAC.
+`admin` Did actually login! **You need to fix RBAC.**
 
 ```
 $ kubectl logs -f dex-kubeaddons-dd869fc8f-j4xcf -n kubeaddons
@@ -102,6 +102,8 @@ time="2020-05-04T20:19:36Z" level=info msg="performing ldap search cn=groups,cn=
 time="2020-05-04T20:19:36Z" level=error msg="ldap: groups search with filter \"(&(objectClass=groupofnames)(uniqueMember=uid=admin,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org))\" returned no groups"
 time="2020-05-04T20:19:36Z" level=info msg="login successful: connector \"dex-controller-ldap\", username=\"\", preferred_username=\"\", email=\"admin\", groups=[]"
 ```
+
+![Not Authorized](media/Not-Authorized.png)
 
 ### `Not Authenticated` but binding works
 
