@@ -16,6 +16,12 @@ Host: ipa.demo1.freeipa.org
 Port: 389
 ```
 
+Commonly Host and optional port of the LDAP server in the form "host:port".
+If the port is not supplied, it will be guessed based on "insecureNoSSL", and "startTLS" flags. 
+
+* `389` for insecure or StartTLS connections, 
+* `636` otherwise.
+
 ## Authentication
 
 You need to use a Bind user for lookup on most LDAP. 
