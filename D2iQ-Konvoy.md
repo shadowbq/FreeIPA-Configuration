@@ -1,10 +1,23 @@
 # D2iQ - Konvoy LDAP connection to FreeIPA/LDAP
 
-### D2iQ Ksphere Konvoy 1.5.x using correctly configured LDAP 
+## D2iQ Ksphere Konvoy 1.5.x using correctly configured LDAP 
 
+### Dex
 
+`Dex` is deployed as an `addon` in Konvoy
 
-## Authenticated for `kubectl` Token use
+* https://github.com/mesosphere/dex/blob/v2.22.0-mesosphere/Documentation/connectors/ldap.md
+
+Note:  You can **not** use the `./extras/kubernetes` folders for automation, because addons are fired after 
+ansible's `STAGE [Deploying Additional Kubernetes Resources]`
+
+### D2iQ Konvoy
+
+There is a somewhat incomplete tutorial using a different open ldap demo server.
+
+* https://docs.d2iq.com/ksphere/konvoy/1.4/security/external-idps/howto-dex-ldap-connector/
+
+### Authenticated for `kubectl` Token use
 
 Requesting Configurations for using ldap `admin` in `kubectl`.
 
@@ -18,7 +31,7 @@ Using `admin-kubernetes-cluster` context in `kubectl` config using ldap `admin`.
 
 ![kubectl use](media/kubectl-config-use.png)
 
-## Authenticated for Opsportal use
+### Authenticated for Opsportal use
 
 Login using the LDAP TEST.
 
@@ -28,11 +41,11 @@ Fully authenticated and authorized using ldap `admin` in `kubectl`.
 
 ![Ops Login](media/PerfectOpsPortal-1.5.png)
 
-## Set additional RBACS
+### Set additional RBACS
 
 (Need more RBAC information here)
 
-## Authenticated into Kommander with Federation
+### Authenticated into Kommander with Federation
 
 (Fix this) Fully authenticated and authorized using "admin" in "opsportal".
 
@@ -51,13 +64,13 @@ dex-kubeaddons-dd869fc8f-j4xcf                                    1/1     Runnin
 dex-kubeaddons-dex-controller-6b6c9fbd7f-sscb7                    2/2     Running     0          3h39m
 ```
 
-## Issues with Binding 
+### Issues with Binding 
 
 There are two or three issues covered in here:
 
 https://docs.d2iq.com/ksphere/konvoy/1.4/security/external-idps/howto-dex-ldap-connector/
 
-## `Not Authorized` is not the same as `Not Authenticated!`
+### `Not Authorized` is not the same as `Not Authenticated!`
 
 This is actually not an error, but a permissions issue.
 
@@ -72,7 +85,7 @@ time="2020-05-04T20:19:36Z" level=error msg="ldap: groups search with filter \"(
 time="2020-05-04T20:19:36Z" level=info msg="login successful: connector \"dex-controller-ldap\", username=\"\", preferred_username=\"\", email=\"admin\", groups=[]"
 ```
 
-## `Not Authenticated` but binding works
+### `Not Authenticated` but binding works
 
 This is very simple, you are use the wrong password for the current user.
 
