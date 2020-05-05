@@ -8,7 +8,7 @@
 
 Requesting Configurations for using ldap `admin` in `kubectl`.
 
-![Token Request](media/TokenRequest-1.5.png)
+![Token Request](media/TokenRequest.png)
 
 Setting `kubectl` config using ldap `admin` .
 
@@ -22,7 +22,7 @@ Using `admin-kubernetes-cluster` context in `kubectl` config using ldap `admin`.
 
 Login using the LDAP TEST.
 
-![Select Portal](media/TokenRequest-1.5.png)
+![Select Portal](media/LDAP-Option.png)
 
 Fully authenticated and authorized using ldap `admin` in `kubectl`.
 
