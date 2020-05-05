@@ -1,6 +1,8 @@
 # D2iQ - Konvoy LDAP connection to FreeIPA/LDAP
 
-## D2iQ Ksphere Konvoy 1.5.x using correctly configured LDAP 
+## Summary 
+
+You can easily hook Dex to provide ldap functionality to Konvoy. 
 
 ### Dex
 
@@ -11,11 +13,13 @@
 Note:  You can **not** use the `./extras/kubernetes` folders for automation, because addons are fired after 
 ansible's `STAGE [Deploying Additional Kubernetes Resources]`
 
-### D2iQ Konvoy
+### Tutorial
 
 There is a somewhat incomplete tutorial using a different open ldap demo server.
 
 * https://docs.d2iq.com/ksphere/konvoy/1.4/security/external-idps/howto-dex-ldap-connector/
+
+## D2iQ Ksphere Konvoy 1.5.x using correctly configured LDAP 
 
 ### Authenticated for `kubectl` Token use
 
