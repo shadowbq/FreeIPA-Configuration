@@ -72,7 +72,7 @@ As an example, Im going to want to go to `/token/plugin` in 1.5.x konvoy.
 
 ![Konvoy Async Auth Plugin](media/konvoy-async-auth.png)
 
-https://a7e20fc00e6314114b65bd8eb65cdcaf-67797667.us-east-1.elb.amazonaws.com/token/plugin
+hxxps://some-elb-dns-instance.us-east-1.elb.amazonaws.com/token/plugin
 
 Konvoy kubectl credentials plugin
 
