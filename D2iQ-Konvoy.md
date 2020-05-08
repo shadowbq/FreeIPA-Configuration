@@ -4,7 +4,7 @@
 
 You can easily hook Dex to provide ldap functionality to Konvoy. 
 
-### Dex
+### *Dex*
 
 `Dex` is deployed as an `addon` in Konvoy
 
@@ -14,7 +14,7 @@ You can easily hook Dex to provide ldap functionality to Konvoy.
 Note:  You can **not** use the `./extras/kubernetes` folders for automation, because addons are fired after 
 ansible's `STAGE [Deploying Additional Kubernetes Resources]`
 
-### Tutorial
+### *Tutorial*
 
 There is a somewhat incomplete tutorial using a different open ldap demo server.
 
@@ -40,7 +40,7 @@ clusterrolebinding.rbac.authorization.k8s.io/prom-rbac created
 
 ## D2iQ Ksphere Konvoy 1.5.x using correctly configured LDAP 
 
-### Authenticated for `kubectl` Token use
+### *Authenticated for `kubectl` Token use*
 
 Requesting Configurations for using ldap `admin` in `kubectl`.
 
@@ -54,7 +54,7 @@ Using `admin-kubernetes-cluster` context in `kubectl` config using ldap `admin`.
 
 ![kubectl use](media/kubectl-config-use.png)
 
-### Authenticated for Opsportal use
+### *Authenticated for Opsportal use*
 
 Login using the LDAP TEST.
 
@@ -64,7 +64,7 @@ Fully authenticated and authorized using ldap `admin` in `kubectl`.
 
 ![Ops Login](media/PerfectOpsPortal-1.5.png)
 
-### Authentication using the `konvoy-async-auth` plugin
+### *Authentication using the `konvoy-async-auth` plugin*
 
 When enabled the plugin initiates authentication sessions and stores identity tokens automatically.
 
@@ -88,7 +88,7 @@ This document describes the process of configuring kubectl to use the Konvoy cre
     
 If this is the first time you've attempted to authenticate using the plugin, a browser window opens to the Konvoy authentication page. After successful authentication, you should see a pod listing in your terminal. The plugin stores your identity token for subsequent requests. After your identity token expires, by default 24 hours, the plugin directs you to the Konvoy authentication page where you can re-authenticate.
 
-### Set additional RBACS
+### *Set additional RBACS*
 
 Grant the user `opsportal-admin` role
 
@@ -117,13 +117,13 @@ PolicyRule:
 
 * More RBAC in the Portal: https://docs.d2iq.com/ksphere/konvoy/1.5.0-beta/security/external-idps/rbac/
 
-### Authenticated into Kommander with Federation
+### *Authenticated into Kommander with Federation*
 
 (Fix this) Fully authenticated and authorized using "admin" in "opsportal".
 
 ![Wrong Password](media/PerfectOpsPortal-1.5.png)
 
-## Refresh Credentials 
+## Refresh Credentials
 
 When the token expires, it is necessary to repeat the above process to obtain a fresh token. When refreshing a token, only the `kubectl config set-credentials ... --token=ABCCC` command needs to be executed with the new token.
 
@@ -131,7 +131,7 @@ Also see: ***Authentication using the `konvoy-async-auth` plugin***
 
 ## Troubleshooting Konvoy
 
-### Find the `Dex` pods
+### *Find the `Dex` pods*
 
 Use the `kubeaddons` namespace when looking for them:
 
@@ -142,13 +142,13 @@ dex-kubeaddons-dd869fc8f-j4xcf                                    1/1     Runnin
 dex-kubeaddons-dex-controller-6b6c9fbd7f-sscb7                    2/2     Running     0          3h39m
 ```
 
-### Issues with Binding 
+### *Issues with Binding* 
 
 There are two or three issues covered in here:
 
 https://docs.d2iq.com/ksphere/konvoy/1.4/security/external-idps/howto-dex-ldap-connector/
 
-### `Not Authorized` is not the same as `Not Authenticated!`
+### *`Not Authorized` is not the same as `Not Authenticated!`*
 
 This is actually not an error, but a permissions issue.
 
@@ -165,7 +165,7 @@ time="2020-05-04T20:19:36Z" level=info msg="login successful: connector \"dex-co
 
 ![Not Authorized](media/Not-Authorized.png)
 
-### `Not Authenticated` but binding works
+### *`Not Authenticated` but binding works*
 
 This is very simple, you are use the wrong password for the current user.
 
