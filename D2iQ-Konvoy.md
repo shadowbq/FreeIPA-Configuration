@@ -237,3 +237,20 @@ Note: This is *48h* because we've edited the dex addon controller in the section
 3rd Group - *Signature*
 
 ```qSJNAxH5xBLfd2ycA7356NpMtXcuNUhtomDpd5WTDb41VGdjfwkSbSMLe1OpBB3eu0iiKoafrUaJzHM78cUEnuOxJlaQtrB-PhOcg2eQPW4PFOda2IQYUQCQPuW5Gx6pBe3yldx5thFcaP7bYIbNDbRUAJi6Tz5stLhYk9ISdsqhpSOWiQK5gboGGC-rLTVQ3KidMup4g3kCdcImt5BdUD42jj4J5BbwSPk9m7OayWhpbjY2lC9OR-UW14sfm1xQuKDOGxpxxwuHuth2sIkYGxyuN0LAKYLCBtw9OEvFnwJXI3wdi0ElV8btt-5t93zXw_aFNm60-SEKFeiTE1liIw```
+
+An Additional Example of the 2nd Group with an LDAP User:
+
+Note: The lack of username, as the ldap user is supposed to login in with an email address, but I've configure it to use the `uid` as FreeIPA lacks an email address for *"admin"*.
+
+```json
+{
+  "iss": "https://a7e20fc00e6314114b65bd8eb65cdcaf-67797667.us-east-1.elb.amazonaws.com/dex",
+  "sub": "CgVhZG1pbhITZGV4LWNvbnRyb2xsZXItbGRhcA",
+  "aud": "kube-apiserver",
+  "exp": 1589133095,
+  "iat": 1588960295,
+  "at_hash": "QXsmTOQ2EAszrRbc9j5Maw",
+  "email": "admin",
+  "email_verified": true
+}
+```
