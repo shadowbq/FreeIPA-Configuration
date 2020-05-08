@@ -131,6 +131,14 @@ When the token expires, it is necessary to repeat the above process to obtain a 
 
 Also see: ***Authentication using the `konvoy-async-auth` plugin***
 
+## Tunables
+
+### Expiry of Dex Tokens
+
+You can change the Dex expiry by injecting into the helm chart values a new config option
+
+![dex extended addon expiry](media/dex-addon-chart-modify.png)
+
 ## Troubleshooting Konvoy
 
 ### *Find the `Dex` pods*
