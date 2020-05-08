@@ -64,6 +64,30 @@ Fully authenticated and authorized using ldap `admin` in `kubectl`.
 
 ![Ops Login](media/PerfectOpsPortal-1.5.png)
 
+### Authentication using the `konvoy-async-auth` plugin
+
+When enabled the plugin initiates authentication sessions and stores identity tokens automatically.
+
+As an example, Im going to want to go to `/token/plugin` in 1.5.x konvoy.
+
+https://a7e20fc00e6314114b65bd8eb65cdcaf-67797667.us-east-1.elb.amazonaws.com/token/plugin
+
+Konvoy kubectl credentials plugin
+
+This document describes the process of configuring kubectl to use the Konvoy credentials plugin. This credentials plugin makes it easy to use external identity provider accounts with the kubernetes API. When enabled the plugin initiates authentication sessions and stores identity tokens automatically.
+
+* Generate a kubeconfig
+* Configure Access to Multiple Clusters
+* Build kubeconfig with kubectl
+* Copy cluster CA certificate
+* Download and Install Konvoy credentials plugin
+* Configure kubectl to use the Plugin
+* Create a cluster configuration
+* Create kubeconfig user Profile
+* Create the context
+    
+If this is the first time you've attempted to authenticate using the plugin, a browser window opens to the Konvoy authentication page. After successful authentication, you should see a pod listing in your terminal. The plugin stores your identity token for subsequent requests. After your identity token expires, by default 24 hours, the plugin directs you to the Konvoy authentication page where you can re-authenticate.
+
 ### Set additional RBACS
 
 Grant the user `opsportal-admin` role
@@ -103,6 +127,7 @@ PolicyRule:
 
 When the token expires, it is necessary to repeat the above process to obtain a fresh token. When refreshing a token, only the `kubectl config set-credentials ... --token=ABCCC` command needs to be executed with the new token.
 
+Also see: ***Authentication using the `konvoy-async-auth` plugin***
 
 ## Troubleshooting Konvoy
 
