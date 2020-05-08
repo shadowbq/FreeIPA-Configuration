@@ -88,7 +88,7 @@ This document describes the process of configuring kubectl to use the Konvoy cre
 * Create kubeconfig user Profile
 * Create the context
     
-If this is the first time you've attempted to authenticate using the plugin, a browser window opens to the Konvoy authentication page. After successful authentication, you should see a pod listing in your terminal. The plugin stores your identity token for subsequent requests. After your identity token expires, by default 24 hours, the plugin directs you to the Konvoy authentication page where you can re-authenticate.
+If this is the first time you've attempted to authenticate using the plugin, a browser window opens to the Konvoy authentication page. After successful authentication, you should see a pod listing in your terminal. The plugin stores your identity token for subsequent requests. After your identity token expires, by **default 24 hours**, the plugin directs you to the Konvoy authentication page where you can re-authenticate.
 
 ### *Set additional RBACS*
 
@@ -134,6 +134,8 @@ Also see: ***Authentication using the `konvoy-async-auth` plugin***
 ## Tunables
 
 ### Expiry of Dex Tokens
+
+Identity token issued by Dex expire after **default 24 hours**.
 
 You can change the Dex expiry by injecting into the helm chart values a new config option
 
