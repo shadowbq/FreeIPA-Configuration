@@ -99,6 +99,11 @@ PolicyRule:
 
 ![Wrong Password](media/PerfectOpsPortal-1.5.png)
 
+## Refresh Credentials 
+
+When the token expires, it is necessary to repeat the above process to obtain a fresh token. When refreshing a token, only the `kubectl config set-credentials ... --token=ABCCC` command needs to be executed with the new token.
+
+
 ## Troubleshooting Konvoy
 
 ### Find the `Dex` pods
