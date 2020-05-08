@@ -183,3 +183,57 @@ This is very simple, you are use the wrong password for the current user.
 
 ![Wrong Password](media/konvoy-wrong-password.png)
 
+
+## Bearer Tokens 
+
+The Token installation looks like this:
+```shell
+$ kubectl config set-credentials cranky_hypatia-kubernetes-cluster \
+    --token=eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4NjdkMmE3YjhjYzA2N2I4N2JhNGM5NGFjYjllY2IyOTFkNDM4ZTUifQ.eyJpc3MiOiJodHRwczovL2E3ZTIwZmMwMGU2MzE0MTE0YjY1YmQ4ZWI2NWNkY2FmLTY3Nzk3NjY3LnVzLWVhc3QtMS5lbGIuYW1hem9uYXdzLmNvbS9kZXgiLCJzdWIiOiJDaVF5WW1ObE16VmxZUzFtWlRNNUxUUXpZMll0T1dVNFppMDBaVFF5TURjeVlXVTVOVEVTQld4dlkyRnMiLCJhdWQiOiJrdWJlLWFwaXNlcnZlciIsImV4cCI6MTU4OTEzMDg2OCwiaWF0IjoxNTg4OTU4MDY4LCJhdF9oYXNoIjoiaDE2RWZEd1JNN05XM0czTnZxTlBhUSIsImVtYWlsIjoiY3Jhbmt5X2h5cGF0aWEiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6ImNyYW5reV9oeXBhdGlhIn0.qSJNAxH5xBLfd2ycA7356NpMtXcuNUhtomDpd5WTDb41VGdjfwkSbSMLe1OpBB3eu0iiKoafrUaJzHM78cUEnuOxJlaQtrB-PhOcg2eQPW4PFOda2IQYUQCQPuW5Gx6pBe3yldx5thFcaP7bYIbNDbRUAJi6Tz5stLhYk9ISdsqhpSOWiQK5gboGGC-rLTVQ3KidMup4g3kCdcImt5BdUD42jj4J5BbwSPk9m7OayWhpbjY2lC9OR-UW14sfm1xQuKDOGxpxxwuHuth2sIkYGxyuN0LAKYLCBtw9OEvFnwJXI3wdi0ElV8btt-5t93zXw_aFNm60-SEKFeiTE1liIw
+```
+
+Taking the Token out: (make note of the "." dots)
+
+```
+eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4NjdkMmE3YjhjYzA2N2I4N2JhNGM5NGFjYjllY2IyOTFkNDM4ZTUifQ.eyJpc3MiOiJodHRwczovL2E3ZTIwZmMwMGU2MzE0MTE0YjY1YmQ4ZWI2NWNkY2FmLTY3Nzk3NjY3LnVzLWVhc3QtMS5lbGIuYW1hem9uYXdzLmNvbS9kZXgiLCJzdWIiOiJDaVF5WW1ObE16VmxZUzFtWlRNNUxUUXpZMll0T1dVNFppMDBaVFF5TURjeVlXVTVOVEVTQld4dlkyRnMiLCJhdWQiOiJrdWJlLWFwaXNlcnZlciIsImV4cCI6MTU4OTEzMDg2OCwiaWF0IjoxNTg4OTU4MDY4LCJhdF9oYXNoIjoiaDE2RWZEd1JNN05XM0czTnZxTlBhUSIsImVtYWlsIjoiY3Jhbmt5X2h5cGF0aWEiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6ImNyYW5reV9oeXBhdGlhIn0.qSJNAxH5xBLfd2ycA7356NpMtXcuNUhtomDpd5WTDb41VGdjfwkSbSMLe1OpBB3eu0iiKoafrUaJzHM78cUEnuOxJlaQtrB-PhOcg2eQPW4PFOda2IQYUQCQPuW5Gx6pBe3yldx5thFcaP7bYIbNDbRUAJi6Tz5stLhYk9ISdsqhpSOWiQK5gboGGC-rLTVQ3KidMup4g3kCdcImt5BdUD42jj4J5BbwSPk9m7OayWhpbjY2lC9OR-UW14sfm1xQuKDOGxpxxwuHuth2sIkYGxyuN0LAKYLCBtw9OEvFnwJXI3wdi0ElV8btt-5t93zXw_aFNm60-SEKFeiTE1liIw
+```
+
+### That ID Token is a JWT with three base64'd fields separated by dots. 
+
+(Base64 decode each section without including the dots) 
+
+* The first is a header, 
+* the second is a payload, 
+* the third is a signature of the first two fields. 
+
+1st Group - *Header*
+
+```json
+{"alg":"RS256","kid":"d867d2a7b8cc067b87ba4c94acb9ecb291d438e5"}
+```
+
+2nd Group - *Payload*
+
+The payload contains:  
+`iat` which is the time of issuance - EPOCH **Friday, May 8, 2020 5:14:28 PM**  
+`exp` which is *48h* after the `iat` - EPOCH of **Sunday, May 10, 2020 5:14:28 PM**  
+
+Note: This is *48h* because we've edited the dex addon controller in the section **Expiry of Dex Tokens** to change to *48h* from the default of *24h*
+
+```json
+{
+  "iss": "https://a7e20fc00e6314114b65bd8eb65cdcaf-67797667.us-east-1.elb.amazonaws.com/dex",
+  "sub": "CiQyYmNlMzVlYS1mZTM5LTQzY2YtOWU4Zi00ZTQyMDcyYWU5NTESBWxvY2Fs",
+  "aud": "kube-apiserver",
+  "exp": 1589130868,
+  "iat": 1588958068,
+  "at_hash": "h16EfDwRM7NW3G3NvqNPaQ",
+  "email": "cranky_hypatia",
+  "email_verified": true,
+  "name": "cranky_hypatia"
+}
+```
+
+3rd Group - *Signature*
+
+```qSJNAxH5xBLfd2ycA7356NpMtXcuNUhtomDpd5WTDb41VGdjfwkSbSMLe1OpBB3eu0iiKoafrUaJzHM78cUEnuOxJlaQtrB-PhOcg2eQPW4PFOda2IQYUQCQPuW5Gx6pBe3yldx5thFcaP7bYIbNDbRUAJi6Tz5stLhYk9ISdsqhpSOWiQK5gboGGC-rLTVQ3KidMup4g3kCdcImt5BdUD42jj4J5BbwSPk9m7OayWhpbjY2lC9OR-UW14sfm1xQuKDOGxpxxwuHuth2sIkYGxyuN0LAKYLCBtw9OEvFnwJXI3wdi0ElV8btt-5t93zXw_aFNm60-SEKFeiTE1liIw```
