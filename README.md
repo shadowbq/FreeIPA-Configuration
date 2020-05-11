@@ -8,6 +8,9 @@ You can launch your own https://hub.docker.com/r/freeipa/freeipa-server/
 
 * https://www.freeipa.org/page/Demo
 
+## About FreeIPA and LDAP
+
+https://www.freeipa.org/images/5/5f/Freeipa-introduction-to-ldap.pdf
 
 ## Connection 
 
