@@ -131,7 +131,7 @@ PolicyRule:
 
 When the token expires, it is necessary to repeat the above process to obtain a fresh token. When refreshing a token, only the `kubectl config set-credentials ... --token=ABCCC` command needs to be executed with the new token.
 
-Also see: [#Authentication using the `konvoy-async-auth` plugin](##authentication-using-the-konvoy-async-auth-plugin)
+Also see: [#Authentication using the `konvoy-async-auth` plugin](#authentication-using-the-konvoy-async-auth-plugin)
 
 ## Tunables
 
