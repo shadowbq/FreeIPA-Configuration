@@ -9,6 +9,18 @@ $ ldapsearch -x -D "uid=admin,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org" -
 Enter LDAP Password:
 ```
 
+Will find "employee" by:
+
+* -x - simple authentication
+* -D - Use bind user "search-user"
+* -W - Prompt for password
+* -b - The search base
+* -h - Host name 
+* -s - Search scope 
+
+Ommitted but you could include: 
+
+* -H - URL of LDAP server. Non-SSL in this case; use "ldaps://" for SSL
 
 ```ini
 # extended LDIF
