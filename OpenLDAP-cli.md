@@ -1,6 +1,6 @@
 # Using OpenLDAP 
 
-We will assume no connection to *demo1.freeipa.org*. Thus we will manually connect and authenticate each time without reling on `/etc/ldap/openldap.conf`. 
+We will assume no connection to *demo1.freeipa.org*. Thus we will manually connect and authenticate each time without reling on `/etc/openldap/ldap.conf`. 
 
 ## Search for "employee" with `ldapsearch`
 
