@@ -66,7 +66,9 @@ Fully authenticated and authorized using ldap `admin` in `kubectl`.
 
 ### *Authentication using the `konvoy-async-auth` plugin*
 
-When enabled the plugin initiates authentication sessions and stores identity tokens automatically.
+When enabled the konvoy plugin initiates authentication sessions and stores identity tokens automatically.
+
+This konvoy authentication plugin is based on the `client.authentication.k8s.io/v1beta1` [plugin architecture](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#client-go-credential-plugins)
 
 As an example, Im going to want to go to `/token/plugin` in 1.5.x konvoy.
 
