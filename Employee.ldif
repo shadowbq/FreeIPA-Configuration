@@ -37,6 +37,5 @@ mail: employee@demo1.freeipa.org
 manager: uid=manager,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org
 memberOf: cn=ipausers,cn=groups,cn=accounts,dc=demo1,dc=freeipa,dc=org
 memberOf: cn=employees,cn=groups,cn=accounts,dc=demo1,dc=freeipa,dc=org
-mepManagedEntry: cn=employee,cn=groups,cn=accounts,dc=demo1,dc=freeipa,dc=or
- g
+mepManagedEntry: cn=employee,cn=groups,cn=accounts,dc=demo1,dc=freeipa,dc=org
 
