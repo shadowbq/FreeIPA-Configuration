@@ -1,0 +1,42 @@
+version: 1
+
+dn: uid=employee,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org
+objectClass: ipantuserattrs
+objectClass: mepOriginEntry
+objectClass: ipaSshGroupOfPubKeys
+objectClass: ipasshuser
+objectClass: ipaobject
+objectClass: krbticketpolicyaux
+objectClass: krbprincipalaux
+objectClass: posixaccount
+objectClass: inetuser
+objectClass: inetorgperson
+objectClass: organizationalperson
+objectClass: person
+objectClass: top
+cn: Test Employee
+gidNumber: 1162400003
+homeDirectory: /home/employee
+ipaNTSecurityIdentifier: S-1-5-21-3656337171-3937262974-1104883008-1003
+ipaUniqueID: 1c4fb108-90d8-11e8-b51b-0628508a174e
+sn: Employee
+uid: employee
+uidNumber: 1162400003
+displayName: Test Employee
+gecos: Test Employee
+givenName: Test
+initials: TE
+krbCanonicalName: employee@DEMO1.FREEIPA.ORG
+krbExtraData:: AAI7KEtca2FkbWluZEBERU1PMS5GUkVFSVBBLk9SRwA=
+krbLastPwdChange: 20190125151611Z
+krbLoginFailedCount: 0
+krbPrincipalName: employee@DEMO1.FREEIPA.ORG
+krbTicketFlags: 128
+loginShell: /bin/sh
+mail: employee@demo1.freeipa.org
+manager: uid=manager,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org
+memberOf: cn=ipausers,cn=groups,cn=accounts,dc=demo1,dc=freeipa,dc=org
+memberOf: cn=employees,cn=groups,cn=accounts,dc=demo1,dc=freeipa,dc=org
+mepManagedEntry: cn=employee,cn=groups,cn=accounts,dc=demo1,dc=freeipa,dc=or
+ g
+
