@@ -105,3 +105,7 @@ result: 0 Success
 # numResponses: 4
 # numEntries: 3
 ```
+
+Reference:
+
+https://www.thegeekstuff.com/2015/02/openldap-add-users-groups/
