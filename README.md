@@ -81,6 +81,14 @@ To allow testing group-based authentication we created additional groups in addi
 
 ![Searching for a group using `cn`](media/group-cn.png)
 
+## Kubernetes Configuration Binding with DEX bindings for LDAP.
+
+You can deploy the kubernetes bindings in `manifests` directory as-is with **D2iQ Konvoy** to provide basic POC use of RBAC with DEX.
+
+Note: The currect deployment is targeted to `dex.mesosphere.com` 
+
+https://github.com/dexidp/dex/blob/master/Documentation/kubernetes.md
+
 ## Docker and Container Issues with FreeIPA
 
 It is not tagging with version numbers **(a major anti-pattern)**, it's only using `:latest`.
