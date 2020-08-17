@@ -87,7 +87,8 @@ You can deploy the kubernetes bindings in `manifests` directory as-is with **D2i
 
 Note: The currect deployment is targeted to `dex.mesosphere.com` 
 
-https://github.com/dexidp/dex/blob/master/Documentation/kubernetes.md
+* https://github.com/dexidp/dex/blob/master/Documentation/kubernetes.md
+* https://docs.d2iq.com/ksphere/konvoy/1.5/security/external-idps/howto-dex-ldap-connector/
 
 ## Docker and Container Issues with FreeIPA
 
