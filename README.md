@@ -4,6 +4,8 @@ This uses the default always on demo server
 
 UI - https://ipa.demo1.freeipa.org/ipa/ui/  
 
+The FreeIPA demo server is just a sandbox and is wiped clean every day at 05:00 UTC.
+
 You can launch your own https://hub.docker.com/r/freeipa/freeipa-server/
 
 * https://www.freeipa.org/page/Demo
