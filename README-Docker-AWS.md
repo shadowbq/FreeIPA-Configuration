@@ -3,7 +3,7 @@
 ## Pre-reqs
 
 1. Ubuntu 18.04 EC2 instance with internet access outbound.
-2. Install `docker-ce` & setup on the ec2 host
+2. Install `docker-ce` & setup on the ec2 host [install-docker-ce-ubuntu-1804](https://www.linode.com/docs/applications/containers/install-docker-ce-ubuntu-1804/)
 3. Agree to use Image `freeipa/freeipa-server:centos-7-4.6.6`
 
 ## Create a AWS SG with the following
