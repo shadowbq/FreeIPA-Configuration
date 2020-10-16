@@ -140,3 +140,9 @@ FreeIPA server does not run DNS server, skipping update-self-ip-address.
 FreeIPA server started.
 ```
 
+## Reference
+
+* https://github.com/freeipa/freeipa-container
+* https://hub.docker.com/r/freeipa/freeipa-server/tags
+
+
